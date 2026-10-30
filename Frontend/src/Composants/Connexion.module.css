@@ -1,0 +1,151 @@
+/* Arrière-plan global et centrage vertical/horizontal */
+.connexionContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f4f6f9;
+}
+
+/* Carte centrale */
+.connexionCard {
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    padding: 36px 32px;
+    border-radius: 12px;
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.05),
+        0 2px 6px rgba(0, 0, 0, 0.03);
+    box-sizing: border-box;
+}
+
+/* En-tête de la carte */
+.cardHeader {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.connexionCard h1 {
+    margin: 0 0 8px 0;
+    color: #1f3a5f;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* Organisation du formulaire */
+.formulaire {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+}
+
+/* Structure des champs */
+.champ {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+.champ label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+}
+
+/* Saisie de texte */
+.formInput {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #1e293b;
+    font-size: 15px;
+    box-sizing: border-box;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.formInput::placeholder {
+    color: #94a3b8;
+}
+
+.formInput:focus {
+    border-color: #1f3a5f;
+    background-color: #ffffff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(31, 58, 95, 0.12);
+}
+
+/* Bouton principal */
+.btn {
+    width: 100%;
+    margin-top: 6px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #1f3a5f;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        transform 0.1s ease;
+}
+
+.btn:hover {
+    background-color: #294d7a;
+}
+
+.btn:active {
+    transform: scale(0.99);
+}
+
+.btn:focus-visible {
+    outline: 2px solid #1f3a5f;
+    outline-offset: 2px;
+}
+
+/* Messages d'alerte et de confirmation */
+.error {
+    color: #dc2626;
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.success {
+    color: #166534;
+    background-color: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+/* Adaptabilité mobile */
+@media (max-width: 480px) {
+    .connexionCard {
+        padding: 24px 20px;
+    }
+}

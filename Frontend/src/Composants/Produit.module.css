@@ -1,0 +1,129 @@
+/* Conteneur principal pour centrer le formulaire */
+.produitContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    background-color: #f4f6f9;
+}
+
+/* Carte du formulaire */
+.produitCard {
+    width: 100%;
+    max-width: 500px;
+    background: #ffffff;
+    padding: 36px 32px;
+    border-radius: 12px;
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.05),
+        0 2px 6px rgba(0, 0, 0, 0.03);
+    box-sizing: border-box;
+}
+
+/* Titre */
+.produitCard h1 {
+    margin: 0 0 24px 0;
+    color: #1f3a5f;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Structure du formulaire */
+.formulaire {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+/* Style des champs */
+.champ {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+/* Inputs (appliqué via className ou hérité) */
+.formInput {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #1e293b;
+    font-size: 15px;
+    box-sizing: border-box;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.formInput:focus {
+    border-color: #1f3a5f;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(31, 58, 95, 0.12);
+}
+
+/* Bouton réutilisable */
+.btn {
+    width: 100%;
+    margin-top: 8px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #1f3a5f;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        transform 0.1s ease;
+}
+
+.btn:hover:not(:disabled) {
+    background-color: #294d7a;
+}
+
+.btn:active:not(:disabled) {
+    transform: scale(0.99);
+}
+
+.btn:disabled {
+    background-color: #94a3b8;
+    cursor: not-allowed;
+}
+
+/* Messages d'erreur et de succès */
+.error {
+    color: #dc2626;
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.success {
+    color: #166534;
+    background-color: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+/* Responsive mobile */
+@media (max-width: 480px) {
+    .produitCard {
+        padding: 24px 20px;
+    }
+}

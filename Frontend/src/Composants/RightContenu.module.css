@@ -1,0 +1,10 @@
+
+.right-column {
+    grid-area: right;
+    padding: 16px;
+    background: #eef1f5;
+}
+
+.right-column p {
+    margin-top: 8px;
+}
