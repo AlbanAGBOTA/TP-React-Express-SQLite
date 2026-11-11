@@ -1,13 +1,14 @@
 import "./App.css";
 import { Route, Routes } from "react-router";
-import Produit from "./Composants/Produit";
-import Accueil from "./Composants/Accueil";
-import Connexion from "./Composants/Connexion";
-import Layout from "./Composants/Layout";
-import Inscription from "./Composants/Inscription";
-import Panier from "./Composants/Panier";
-import ProtectedRoute from "./Composants/ProtectedRoute";
-import Catalogue from "./Composants/Catalogue";
+import Produit from "./pages/backoffice/Produits/Produit";
+import Accueil from "./pages/frontoffice/Accueil/Accueil";
+import Connexion from "./pages/auth/Connexion/Connexion";
+import Layout from "./layouts/Layout";
+import Inscription from "./pages/auth/Inscription/Inscription";
+import Panier from "./pages/frontoffice/Panier/Panier";
+import ProtectedRoute from "./routes/ProtectedRoute";
+import Catalogue from "./pages/backoffice/Produits/Catalogue";
+
 
 function App() {
   return (

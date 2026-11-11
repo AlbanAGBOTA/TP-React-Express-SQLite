@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Champs from "./Props/ChampProps";
 import styles from "./Produit.module.css";
-import Bouton from "./Bouton";
 import { useNavigate } from "react-router";
+import Champs from "../../../components/forms/ChampProps";
+import Bouton from "../../../components/common/Bouton";
 
 function Produit() {
     const [formData, setFormData] = useState({

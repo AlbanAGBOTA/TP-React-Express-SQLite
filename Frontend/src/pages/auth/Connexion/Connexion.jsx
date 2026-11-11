@@ -1,8 +1,8 @@
 import { useState } from "react";
 import styles from "./Connexion.module.css";
-import { emailValide, nonVide } from "../utils/validators";
-import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router";
+import { useAuth } from "../../../context/AuthContext";
+import { emailValide, nonVide } from "../../../utils/validators";
 
 function Connexion() {
     const [form, setForm] = useState({ email: "", password: "" });

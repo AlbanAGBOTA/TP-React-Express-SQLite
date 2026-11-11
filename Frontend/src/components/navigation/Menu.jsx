@@ -1,6 +1,7 @@
 import { NavLink, useNavigate } from "react-router";
-import { useAuth } from "../context/AuthContext";
+// import { useAuth } from "../context/AuthContext";
 import styles from "./Menu.module.css";
+import { useAuth } from "../../context/AuthContext";
 
 function Menu() {
     const { utilisateur, estConnecte, deconnecter } = useAuth();

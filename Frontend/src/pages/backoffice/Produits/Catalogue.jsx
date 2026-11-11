@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import styles from "./ListeProduit.module.css";
 import { Link } from "react-router";
-import Bouton from "./Bouton";
+import Bouton from "../../../components/common/Bouton";
 
 function Catalogue() {
     const [produits, setProduits] = useState([]);

@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 // import { Link } from "react-router-dom";
 import styles from "./Inscription.module.css";
-import { nettoyerNom, validerInscription } from "../utils/validators";
-import Champs from "./Props/ChampProps";
+import { nettoyerNom, validerInscription } from "../../../utils/validators";
+import Champs from "../../../components/forms/ChampProps";
 import { Link } from "react-router";
 
 // AJOUT NOM : liste des champs qui n'acceptent que des lettres
