@@ -40,7 +40,7 @@ function Connexion() {
                 "Veuillez saisir une adresse email valide.";
         }
         if (!nonVide(form.password)) {
-            nouvellesErreurs = "Le mot de passe est obligatoire";
+            nouvellesErreurs.password = "Le mot de passe est obligatoire";
         }
         setErreurs(nouvellesErreurs);
 

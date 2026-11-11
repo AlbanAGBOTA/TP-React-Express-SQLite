@@ -3,7 +3,7 @@ import styles from "./Footer.module.css";
 function Footer() {
     return (
         <footer className={styles.footer}>
-            <p>© 2026 Ma boutique. Tous droits réservés.</p>
+            <p>© 2026 TechStore. Tous droits réservés.</p>
         </footer>
     );
 }
