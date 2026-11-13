@@ -4,12 +4,15 @@ import "./index.css";
 import App from "./App.jsx";
 import { BrowserRouter } from "react-router";
 import AuthProvider from "./context/AuthContext.jsx";
+import PanierProvider from "./context/PanierContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
       <AuthProvider>
-        <App />
+        <PanierProvider>
+          <App />
+        </PanierProvider>
       </AuthProvider>
     </BrowserRouter>
   </StrictMode>,

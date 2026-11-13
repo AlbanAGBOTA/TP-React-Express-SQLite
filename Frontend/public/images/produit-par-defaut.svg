@@ -1,0 +1,12 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350">
+  <rect width="500" height="350" fill="#f3f4f6"/>
+  <g fill="none" stroke="#9ca3af" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="145" y="75" width="210" height="145" rx="12"/>
+    <path d="M110 255h280l-25 25H135z"/>
+    <path d="M220 255h60"/>
+  </g>
+  <text x="250" y="315" text-anchor="middle"
+        font-family="Arial, sans-serif" font-size="19" fill="#6b7280">
+    Image indisponible
+  </text>
+</svg>

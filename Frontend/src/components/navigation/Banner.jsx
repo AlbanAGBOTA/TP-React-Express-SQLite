@@ -5,7 +5,7 @@ function Banner() {
     return (
         <>
             <header className={styles.banner}>
-                <h1> Ma boutique </h1>
+                <h1 className={styles.logo}>TechStore</h1>
                 <Menu />
             </header>
         </>

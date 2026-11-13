@@ -1,19 +1,33 @@
-// import "./style.css";
+import { NavLink } from "react-router";
 import styles from "./Sidebar.module.css";
+import { useAuth } from "../../context/AuthContext";
+
 function ColonneGauche() {
+    const { utilisateur } = useAuth();
+
     return (
         <aside className={styles.sidebar}>
-            <h2>Catégorie</h2>
+            <h2>Navigation</h2>
+
             <ul>
                 <li>
-                    <a href="">Clavier</a>
+                    <NavLink to="/">Accueil</NavLink>{" "}
                 </li>
                 <li>
-                    <a href="">Souri</a>
+                    <NavLink to="/catalogue">Catalogue</NavLink>{" "}
                 </li>
-                <li>
-                    <a href="">Ecran</a>
-                </li>
+                {utilisateur?.role === "client" && (
+                    <li>
+                        <NavLink to="/panier">Mon panier</NavLink>{" "}
+                    </li>
+                )}
+                {utilisateur?.role === "admin" && (
+                    <li>
+                        <NavLink to="/admin/produits">
+                            Administration
+                        </NavLink>
+                    </li>
+                )}
             </ul>
         </aside>
     );

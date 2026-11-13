@@ -1,11 +1,16 @@
 import { NavLink, useNavigate } from "react-router";
-// import { useAuth } from "../context/AuthContext";
 import styles from "./Menu.module.css";
 import { useAuth } from "../../context/AuthContext";
+import { usePanier } from "../../context/PanierContext";
 
 function Menu() {
     const { utilisateur, estConnecte, deconnecter } = useAuth();
+    const { totalArticles } = usePanier();
     const navigate = useNavigate();
+
+    // Vérifier le rôle de l'utilisateur
+    const estAdmin = utilisateur?.role === "admin";
+    const estClient = utilisateur?.role === "client";
 
     // Fonction de déconnexion
     const handleDeconnexion = () => {
@@ -13,66 +18,46 @@ function Menu() {
         navigate("/connexion", { replace: true });
     };
 
+    // Classe CSS commune aux liens
+    const classeLien = ({ isActive }) =>
+        `${styles.link} ${isActive ? styles.activeLink : ""}`;
+
     return (
         <nav className={styles.navBar}>
-            {/* Liens de gauche (Accueil / Catalogue) */}
+            {/* Liens de gauche */}
             <div className={styles.navLinks}>
-                <NavLink
-                    to="/"end
-                    className={({ isActive }) =>
-                        `${styles.link} ${isActive ? styles.activeLink : ""}`
-                    }
-                >
-                    Accueil
+                <NavLink to="/" end className={classeLien}>
+                    {" "}
+                    Accueil{" "}
                 </NavLink>
+                {estAdmin ? (
+                    <NavLink to="/admin/produits" className={classeLien}>
+                        {" "}
+                        Administration
+                    </NavLink>
+                ) : (
+                    <NavLink to="/catalogue" className={classeLien}>
+                        {" "}
+                        Catalogue{" "}
+                    </NavLink>
+                )}
 
-                <NavLink
-                    to="/produit"
-                    className={({ isActive }) =>
-                        `${styles.link} ${isActive ? styles.activeLink : ""}`
-                    }
-                >
-                    Catalogue
-                </NavLink>
-                <NavLink
-                    to="/panier"
-                    className={({ isActive }) =>
-                        `${styles.link} ${isActive ? styles.activeLink : ""}`
-                    }
-                >
-                    Panier
-                </NavLink>
-
-                {estConnecte && (
-                    <NavLink
-                        to="/panier"
-                        className={({ isActive }) =>
-                            `${styles.link} ${isActive ? styles.activeLink : ""}`
-                        }
-                    >
-                        Panier
+                {estClient && (
+                    <NavLink to="/panier" className={classeLien}>
+                        Panier ({totalArticles})
                     </NavLink>
                 )}
             </div>
 
-            {/* Liens de droite (Selon l'état de connexion) */}
+            {/* Liens de droite */}
             <div className={styles.navLinks}>
                 {!estConnecte ? (
                     <>
-                        <NavLink
-                            to="/connexion"
-                            className={({ isActive }) =>
-                                `${styles.link} ${isActive ? styles.activeLink : ""}`
-                            }
-                        >
+                        <NavLink to="/connexion" className={classeLien}>
                             Connexion
                         </NavLink>
-                        <NavLink
-                            to="/inscription"
-                            className={({ isActive }) =>
-                                `${styles.link} ${isActive ? styles.activeLink : ""}`
-                            }
-                        >
+
+                        <NavLink to="/inscription" className={classeLien}>
                             Inscription
                         </NavLink>
                     </>
@@ -84,6 +69,7 @@ function Menu() {
                                 {utilisateur?.prenom || "Utilisateur"}
                             </span>
                         </span>
+
                         <button
                             onClick={handleDeconnexion}
                             className={styles.logoutBtn}
@@ -96,5 +82,4 @@ function Menu() {
         </nav>
     );
 }
-
 export default Menu;

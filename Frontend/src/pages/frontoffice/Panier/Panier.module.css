@@ -1,0 +1,168 @@
+.page {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+.titre {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.resume {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.messageVide {
+    text-align: center;
+    padding: 50px 20px;
+    color: #777;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+}
+
+.listeArticles {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.carteArticle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.informations {
+    flex: 1;
+}
+
+.nomProduit {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.prixUnitaire {
+    color: #666;
+    font-size: 14px;
+}
+
+.controlesQuantite {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.boutonQuantite {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.2s;
+}
+
+.boutonQuantite:hover:not(:disabled) {
+    background-color: #e5e5e5;
+}
+
+.boutonQuantite:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.quantite {
+    font-weight: 600;
+    min-width: 20px;
+    text-align: center;
+}
+
+.boutonSupprimer {
+    border: none;
+    background: none;
+    color: #d93025;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.boutonSupprimer:hover {
+    text-decoration: underline;
+}
+.sousTotal {
+    font-size: 16px;
+    font-weight: 600;
+    color: #222;
+    white-space: nowrap;
+}
+.recapitulatif {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+}
+
+.total {
+    font-size: 24px;
+    font-weight: 700;
+    color: #198754;
+}
+
+.boutonVider {
+    display: block;
+    margin: 20px 0 0 auto;
+    padding: 11px 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: #dc3545;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.boutonVider:hover {
+    background-color: #bb2d3b;
+}
+
+@media (max-width: 768px) {
+    .page {
+        width: 95%;
+        margin: 25px auto;
+    }
+
+    .carteArticle {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .recapitulatif {
+        gap: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .total {
+        font-size: 21px;
+    }
+
+    .boutonVider {
+        width: 100%;
+    }
+}
